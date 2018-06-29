@@ -3,10 +3,22 @@ import PropTypes from 'prop-types';
 
 function Album(props) {
   return(
-    <div>
+    <div className='album'>
+      <style jsx>{`
+          .title-artist {
+            display: inline;
+          }
+          .album {
+            display: grid;
+            grid-template-columns: 1fr 9fr 2fr
+          }
+        `}
+      </style>
       <img src={props.imageUrl}/>
-      <h3><em>{props.title}</em></h3>
-      <h3>by {props.artist}</h3>
+      <div clsssName='title-artist'>
+        <h3><em>{props.title}</em></h3>
+        <h3>by {props.artist}</h3>
+      </div>
       <h3>${props.price}</h3>
     </div>
   );

@@ -27,23 +27,37 @@ const ALBUM_LIST = [
 
 function Marketplace() {
   return(
-    <div>
-      <h2>In Stock</h2>
-      <select>
-        <option disabled hidden>Filter by Price</option>
-        <option>All</option>
-        <option>$50+</option>
-        <option>$20-50</option>
-        <option>Under $20</option>
-      </select>
-      {ALBUM_LIST.map((album, index) =>
-        <Album title={album.title}
-          artist={album.artist}
-          description={album.description}
-          price={album.price}
-          imageUrl={album.imageUrl}
-          key={index}/>
-      )}
+    <div className='container'>
+      <style jsx>{`
+        .container {
+          padding: 0 8vw;
+        }
+        .content {
+          margin-left: auto;
+          margin-right: auto;
+          align-items: center;
+          max-width: 1110px;
+        }
+        `}
+      </style>
+      <div className='content'>
+        <h2>In Stock</h2>
+        <select>
+          <option disabled hidden>Filter by Price</option>
+          <option>All</option>
+          <option>$50+</option>
+          <option>$20-50</option>
+          <option>Under $20</option>
+        </select>
+        {ALBUM_LIST.map((album, index) =>
+          <Album title={album.title}
+            artist={album.artist}
+            description={album.description}
+            price={album.price}
+            imageUrl={album.imageUrl}
+            key={index}/>
+        )}
+      </div>
     </div>
   );
 }
