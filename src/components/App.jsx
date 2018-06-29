@@ -10,11 +10,11 @@ import Footer from './Footer';
 
 function App(){
   return (
-    <div>
+    <div className='app'>
       <style jsx>{`
-          div{
+          .app {
             font-family: sans-serif;
-          }
+          }          
         `}
       </style>
       <Header/>
