@@ -11,7 +11,7 @@ function NavBar() {
             margin-bottom: 30px;
             background-color: #343a40;
           }
-          .nav-links a {
+          .nav-links Link {
             text-decoration: none;
           }
           .nav-links h3 {
