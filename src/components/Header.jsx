@@ -6,6 +6,11 @@ function Header() {
   return(
     <div className='header'>
       <style jsx>{`
+          .logo img {
+            margin-right: 10px;
+            width: 80px;
+            height: 80px;
+          }
           .logo h1 {
             font-weight: 500;
             font-size: 36px;
@@ -14,10 +19,6 @@ function Header() {
             display: flex;
             margin-left: 8vw;
           }
-          .logo img {
-            width: 80px;
-            height:80px;
-            margin-right: 10px;
         `}
       </style>
       <NavBar/>
