@@ -11,6 +11,12 @@ import Footer from './Footer';
 function App(){
   return (
     <div>
+      <style jsx>{`
+          div{
+            font-family: sans-serif;
+          }
+        `}
+      </style>
       <Header/>
       <Switch>
         <Route exact path='/' component={Welcome}/>
