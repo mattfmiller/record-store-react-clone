@@ -5,21 +5,26 @@ function Album(props) {
   return(
     <div className='album'>
       <style jsx>{`
-          .title-artist {
-            display: inline;
-          }
           .album {
+            align-items: center;
+            border: 1px solid lightgrey;
+            border-radius: 5px;
+            padding: 0 20px;
             display: grid;
-            grid-template-columns: 1fr 9fr 2fr
+            grid-template-columns: 1fr 9fr 2fr;
+          }
+          .album img {
+            width: 50px;
+          }
+          .album h3 {
+            font-size: 28px;
+            font-weight: 400;
           }
         `}
       </style>
-      <img src={props.imageUrl}/>
-      <div clsssName='title-artist'>
-        <h3><em>{props.title}</em></h3>
-        <h3>by {props.artist}</h3>
-      </div>
-      <h3>${props.price}</h3>
+        <img src={props.imageUrl}/>
+        <h3><em>{props.title}</em> by {props.artist}</h3>
+        <h3>${props.price}</h3>
     </div>
   );
 }
