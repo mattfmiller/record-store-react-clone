@@ -6,13 +6,13 @@ function Footer() {
     <div className='footer'>
       <style jsx>{`
           .footer {
-            position:absolute;
-            bottom:0;
-            width:100%;
-            height:60px;
-            background-color: #f5f5f5;
             }
             .container {
+              position: fixed;
+              bottom: 0;
+              width: 100%;
+              height: 60px;
+              background-color: #f5f5f5;
               padding: 0 8vw;
             }
             .container h4 {
@@ -22,6 +22,7 @@ function Footer() {
               margin-right: auto;
               align-items: center;
               max-width: 1110px;
+              padding: 10px;
             }
           }
         `}
