@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Header from './Header';
 import Welcome from './Welcome';
 import About from './About';
+import Marketplace from './Marketplace';
 import Error404 from './Error404';
 import Footer from './Footer';
 
@@ -13,6 +14,7 @@ function App(){
       <Switch>
         <Route exact path='/' component={Welcome}/>
         <Route path='/about' component={About}/>
+        <Route path='/marketplace' component={Marketplace}/>
         <Route component={Error404}/>
       </Switch>
       <Footer/>
