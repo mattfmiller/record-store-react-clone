@@ -12,15 +12,23 @@ function Footer() {
             height:60px;
             background-color: #f5f5f5;
             }
-            .footer h4 {
-              margin-left: 8vw;
+            .container {
+              padding: 0 8vw;
+            }
+            .container h4 {
               font-weight: 400;
               color: #6c7588;
+              margin-left: auto;
+              margin-right: auto;
+              align-items: center;
+              width: 1110px;
             }
           }
         `}
       </style>
-      <Link to='/admin'><h4>Admin</h4></Link>
+      <div className='container'>
+        <Link to='/admin'><h4>Admin</h4></Link>
+      </div>
     </div>
   );
 }

@@ -6,6 +6,9 @@ function Header() {
   return(
     <div className='header'>
       <style jsx>{`
+          .container {
+            padding: 0 8vw;
+          }
           .logo img {
             margin-right: 10px;
             width: 80px;
@@ -17,14 +20,17 @@ function Header() {
           }
           .logo {
             display: flex;
-            margin-left: 8vw;
+            width: 1110px;
+            margin:0 auto;
           }
         `}
       </style>
       <NavBar/>
-      <div className='logo'>
-        <img src={epicodusLogo}/>
-        <h1>Epicodus Tunes</h1>
+      <div className='container'>
+        <div className='logo'>
+          <img src={epicodusLogo}/>
+          <h1>Epicodus Tunes</h1>
+        </div>
       </div>
     </div>
   );
