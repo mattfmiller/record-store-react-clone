@@ -9,10 +9,11 @@ function About() {
         }
         .content {
           font-weight: 400;
+          line-height: 1.6;
           margin-left: auto;
           margin-right: auto;
           align-items: center;
-          width: 1110px;
+          max-width: 1110px;
         }
         .content h1 {
           font-weight: 500;
