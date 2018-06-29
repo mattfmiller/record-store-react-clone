@@ -11,6 +11,7 @@ function Header() {
           }
           .logo img {
             margin-right: 10px;
+            margin-bottom: 25px;
             width: 80px;
             height: 80px;
           }
