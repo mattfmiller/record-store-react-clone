@@ -36,6 +36,9 @@ For support, contact: matt.f.miller@live.com
 * CSS
 * React
 
+## Notes
+* In developing my component chart, I realized I am not sure exactly how to indicate that I want to reuse a component (my marketplace) from an admin route with additional features available. I also don't know how this would work in React yet since we haven't reused components in multiple routes (I assume this is fine though) or used branching to show and hide elements in a component like we did in Angular.
+
 ### License
 
 This software is licensed under the GPL license.
