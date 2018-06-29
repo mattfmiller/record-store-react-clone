@@ -27,7 +27,7 @@ function Footer() {
         `}
       </style>
       <div className='container'>
-        <Link to='/admin'><h4>Admin</h4></Link>
+        <Link style={{textDecoration: 'none'}} to='/admin'><h4>Admin</h4></Link>
       </div>
     </div>
   );

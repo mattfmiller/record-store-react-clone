@@ -30,9 +30,9 @@ function NavBar() {
         `}
       </style>
       <div className='nav-links'>
-        <Link to='/'><h3>Epicodus Tunes</h3></Link>
-        <Link to='/about'><h4>About</h4></Link>
-        <Link to='/marketplace'><h4>Marketplace</h4></Link>
+        <Link style={{textDecoration: 'none'}} to='/'><h3>Epicodus Tunes</h3></Link>
+        <Link style={{textDecoration: 'none'}} to='/about'><h4>About</h4></Link>
+        <Link style={{textDecoration: 'none'}} to='/marketplace'><h4>Marketplace</h4></Link>
       </div>
     </div>
   );
