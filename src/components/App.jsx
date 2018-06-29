@@ -14,7 +14,7 @@ function App(){
       <style jsx>{`
           .app {
             font-family: sans-serif;
-          }          
+          }         
         `}
       </style>
       <Header/>
