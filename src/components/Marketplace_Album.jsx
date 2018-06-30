@@ -22,9 +22,9 @@ function Album(props) {
           }
         `}
       </style>
-        <img src={props.imageUrl}/>
-        <h3><em>{props.title}</em> by {props.artist}</h3>
-        <h3>${props.price}</h3>
+      <img src={props.imageUrl}/>
+      <h3><em>{props.title}</em> by {props.artist}</h3>
+      <h3>${props.price}</h3>
     </div>
   );
 }
