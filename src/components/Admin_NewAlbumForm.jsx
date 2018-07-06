@@ -1,6 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function NewAlbumForm() {
+function NewAlbumForm(props) {
+  let _title = null;
+  let _artist = null;
+  let _description = null;
+  let _price = null;
+  let _image = null;
+
+  function handleNewAlbumFormSubmission(event) {
+    event.preventDefault();
+    props.onNewAlbumCreation({title: _title.value, artist: _artist.value, description: _description.value, price: _price.value, image: _image.value});
+    _title.value = '';
+    _artist.value = '';
+    _description.value = '';
+    _price.value = 0;
+    _image.value = '';
+  }
+
   return(
     <div className='container'>
       <style jsx>{`
@@ -26,35 +43,56 @@ function NewAlbumForm() {
       </style>
       <div className='content'>
         <h2>Add New Album to Inventory</h2>
-        <div>
-          <label>Album Title:</label>
-          <br/>
-          <input/>
-        </div>
-        <div>
-          <label>Album Artist:</label>
-          <br/>
-          <input/>
-        </div>
-        <div>
-          <label>Album Description:</label>
-          <br/>
-          <textarea></textarea>
-        </div>
-        <div>
-          <label>Album Price:</label>
-          <br/>
-          <input type="number"/>
-        </div>
-        <div>
-          <label>Album Image:</label>
-          <br/>
-          <input/>
-        </div>
-        <button>Add</button>
+        <form onSubmit={handleNewAlbumFormSubmission}>
+          <div>
+            <label>Album Title:</label>
+            <br/>
+            <input
+              type='text'
+              id='title'
+              ref={(input) => {_title = input;}}/>
+          </div>
+          <div>
+            <label>Album Artist:</label>
+            <br/>
+            <input
+              type='text'
+              id='artist'
+              ref={(input) => {_artist = input;}}/>
+          </div>
+          <div>
+            <label>Album Description:</label>
+            <br/>
+            <textarea
+              type='textarea'
+              id='description'
+              ref={(input) => {_description = input;}}/>
+          </div>
+          <div>
+            <label>Album Price:</label>
+            <br/>
+            <input
+              type="number"
+              id='price'
+              ref={(input) => {_price = input;}}/>
+          </div>
+          <div>
+            <label>Album Image:</label>
+            <br/>
+            <input
+              type='text'
+              id='image'
+              ref={(input) => {_image = input;}}/>
+          </div>
+          <button type='submit'>Add</button>
+        </form>
       </div>
     </div>
   );
 }
+
+.propTypes = {
+  onNewAlbumCreation: PropTypes.func
+};
 
 export default NewAlbumForm;

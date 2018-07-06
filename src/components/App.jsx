@@ -20,14 +20,14 @@ class App extends React.Component{
           price: 45,
           imageUrl: 'http://www.bbc.co.uk/staticarchive/8f469a55fabeee046caad748f025b517c0e479ce.jpg'
         },
-        2: {
+        {
           title: 'Dilate',
           artist: 'Ani DiFranco',
           description: 'Her highest-selling and most acclaimed album, released in 1996.',
           price: 25,
           imageUrl: 'https://moveonfirenze.com/wp-content/uploads/dilate.jpg'
         },
-        3: {
+        {
           title: 'Axis Bold As Love',
           artist: 'Jimi Hendrix',
           description: 'Second studio album by the English-American band, released in 1967.',
