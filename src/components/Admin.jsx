@@ -15,7 +15,8 @@ function Admin(props) {
 Admin.propTypes = {
   onNewAlbumCreation:PropTypes.func,
   albumList:PropTypes.object,
-  onAlbumSelection:PropTypes.func
+  onAlbumSelection:PropTypes.func,
+  selectedAlbum:PropTypes.object
 };
 
 export default Admin;

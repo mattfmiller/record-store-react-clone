@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function AlbumDetails(props) {
   return(
@@ -32,5 +33,10 @@ function AlbumDetails(props) {
     </div>
   );
 }
+
+AlbumDetails.propTypes = {
+  onAlbumSelection:PropTypes.func,
+  selectedAlbum:PropTypes.object
+};
 
 export default AlbumDetails;

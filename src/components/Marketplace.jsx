@@ -32,7 +32,7 @@ function Marketplace(props) {
             albumId={albumId}
             onAlbumSelection={props.onAlbumSelection}/>;
         })}
-      </div>
+      </div>;
   }
 
   return(
@@ -70,7 +70,8 @@ function Marketplace(props) {
 
 Marketplace.propTypes = {
   albumList:PropTypes.object,
-  onAlbumSelection:PropTypes.func
+  onAlbumSelection:PropTypes.func,
+  selectedAlbum:PropTypes.object
 };
 
 export default Marketplace;
