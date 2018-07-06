@@ -7,7 +7,7 @@ function Admin(props) {
   return(
     <div>
       <NewAlbumForm onNewAlbumCreation={props.onNewAlbumCreation} />
-      <Marketplace albumList={props.albumList} selectedAlbum={props.selectedAlbum} onAlbumSelection={props.onAlbumSelection} currentRouterPath={props.currentRouterPath} onEditSelection={props.onEditSelection} albumToEdit={props.albumToEdit}/>
+      <Marketplace albumList={props.albumList} selectedAlbum={props.selectedAlbum} onAlbumSelection={props.onAlbumSelection} currentRouterPath={props.currentRouterPath} onEditSelection={props.onEditSelection}/>
     </div>
   );
 }
@@ -19,7 +19,6 @@ Admin.propTypes = {
   selectedAlbum:PropTypes.string,
   currentRouterPath:PropTypes.string,
   onEditSelection:PropTypes.func,
-  albumToEdit:PropTypes.string
 };
 
 export default Admin;
