@@ -23,7 +23,9 @@ class App extends React.Component{
     let newAlbumId = v4();
     let newMasterAlbumList = Object.assign({}, this.state.masterAlbumList, {[newAlbumId]: newAlbum});
     this.setState({masterAlbumList: newMasterAlbumList});
+    console.log(this.state);
   }
+
 
   render() {
     return (

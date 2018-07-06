@@ -47,7 +47,7 @@ function Marketplace(props) {
             price={album.price}
             imageUrl={album.imageUrl}
             key={albumId}
-            albumId={albumId} />
+            albumId={albumId} />;
         })}
       </div>
     </div>

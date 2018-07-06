@@ -6,16 +6,16 @@ function NewAlbumForm(props) {
   let _artist = null;
   let _description = null;
   let _price = null;
-  let _image = null;
+  let _imageUrl = null;
 
   function handleNewAlbumFormSubmission(event) {
     event.preventDefault();
-    props.onNewAlbumCreation({title: _title.value, artist: _artist.value, description: _description.value, price: _price.value, image: _image.value});
+    props.onNewAlbumCreation({title: _title.value, artist: _artist.value, description: _description.value, price: parseInt(_price.value), imageUrl: _imageUrl.value});
     _title.value = '';
     _artist.value = '';
     _description.value = '';
     _price.value = 0;
-    _image.value = '';
+    _imageUrl.value = '';
   }
 
   return(
@@ -81,8 +81,8 @@ function NewAlbumForm(props) {
             <br/>
             <input
               type='text'
-              id='image'
-              ref={(input) => {_image = input;}}/>
+              id='imageUrl'
+              ref={(input) => {_imageUrl = input;}}/>
           </div>
           <button type='submit'>Add</button>
         </form>
