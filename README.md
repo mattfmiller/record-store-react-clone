@@ -45,6 +45,7 @@ For support, contact: matt.f.miller@live.com
 * I am unable to target Link tags in my CSS module meaning that I am unable to remove text decoration with this method of styling since targeting anchor tags does not work (even though the DOM renders Link tags as anchor tags).
 * When accessing a component through multiple routes, important to remember to pass all props and callback functions through both routes to component. Seems a little redundant, but makes sense. Maybe this is an indication that my state should be down a level and this might not be the lowest common ancestor for my components that need state...
 * Not sure how to do dynamic routing so I instead created an album details section to selectively display album details and used conditional rendering to hide marketplace. Not sure if this is the best way to do this.
+* Setting values in my form equal to my props renders them fixed. After some googling, I am still unclear on how to generate autofilled inputs that can be altered.
 
 ### License
 
