@@ -47,11 +47,18 @@ class App extends React.Component{
   }
 
   handleFilterChange(filterTerm) {
-    console.log(filterTerm);
-    if (filterTerm === 'all'){
-      this.setState({filteredAlbumList: this.state.masterAlbumList})
-    }
-
+    if (filterTerm === 'all') {
+      this.setState({filteredAlbumList: this.state.masterAlbumList});
+    } //else if (filterTerm === 'high') {
+    //   let newFilteredAlbumList = {};
+    //   Object.keys(this.state.masterAlbumList).forEach(albumId => {
+    //     if (this.state.masterAlbumList[albumId].price >= 50) {
+    //       let currentNewFilteredAlbumList = newFilteredAlbumList;
+    //       newFilteredAlbumList = Object.assign({}, currentNewFilteredAlbumList, this.state.masterAlbumList[albumId]);
+    //     }
+    //   this.setState({filteredAlbumList: newFilteredAlbumList});
+    // });
+    // }
   }
 
   render() {

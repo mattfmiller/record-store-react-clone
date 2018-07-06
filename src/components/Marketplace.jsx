@@ -7,7 +7,6 @@ function Marketplace(props) {
   let optionalSelectedAlbumContent = null;
 
   function handleFilterValue(event) {
-    console.log(event.target.value);
     props.onFilterChange(event.target.value);
   }
 
@@ -16,55 +15,55 @@ function Marketplace(props) {
   } else {
     if (props.currentRouterPath === '/admin') {
       optionalSelectedAlbumContent =
-      <div>
-        <h2>In Stock</h2>
-        <br/>
-        {Object.keys(props.albumList).map(function(albumId) {
-          let album = props.albumList[albumId];
-          return <Album title={album.title}
-            artist={album.artist}
-            description={album.description}
-            price={album.price}
-            imageUrl={album.imageUrl}
-            key={albumId}
-            albumId={albumId}
-            currentRouterPath={props.currentRouterPath}
-            onAlbumSelection={props.onAlbumSelection}
-            onEditSelection={props.onEditSelection}
-            albumIdToEdit={props.albumIdToEdit}
-            onUpdateSelectedAlbum={props.onUpdateSelectedAlbum}/>;
-        })}
-      </div>;
+        <div>
+          <h2>In Stock</h2>
+          <br/>
+          {Object.keys(props.albumList).map(function(albumId) {
+            let album = props.albumList[albumId];
+            return <Album title={album.title}
+              artist={album.artist}
+              description={album.description}
+              price={album.price}
+              imageUrl={album.imageUrl}
+              key={albumId}
+              albumId={albumId}
+              currentRouterPath={props.currentRouterPath}
+              onAlbumSelection={props.onAlbumSelection}
+              onEditSelection={props.onEditSelection}
+              albumIdToEdit={props.albumIdToEdit}
+              onUpdateSelectedAlbum={props.onUpdateSelectedAlbum}/>;
+          })}
+        </div>;
     } else {
       optionalSelectedAlbumContent =
-      <div>
-        <h2>In Stock</h2>
-        <select onChange={handleFilterValue}>
-          <option disabled hidden value='all'>Filter by Price</option>
-          <option value='all'>All</option>
-          <option value='high'>$50+</option>
-          <option value='mid'>$20-50</option>
-          <option value='low'>Under $20</option>
-        </select>
-        <br/>
-        <br/>
-        <br/>
-        {Object.keys(props.albumList).map(function(albumId) {
-          let album = props.albumList[albumId];
-          return <Album title={album.title}
-            artist={album.artist}
-            description={album.description}
-            price={album.price}
-            imageUrl={album.imageUrl}
-            key={albumId}
-            albumId={albumId}
-            currentRouterPath={props.currentRouterPath}
-            onAlbumSelection={props.onAlbumSelection}
-            onEditSelection={props.onEditSelection}
-            albumIdToEdit={props.albumIdToEdit}
-            onUpdateSelectedAlbum={props.onUpdateSelectedAlbum}/>;
-        })}
-      </div>;
+        <div>
+          <h2>In Stock</h2>
+          <select onChange={handleFilterValue}>
+            <option disabled hidden value='all'>Filter by Price</option>
+            <option value='all'>All</option>
+            <option value='high'>$50+</option>
+            <option value='mid'>$20-50</option>
+            <option value='low'>Under $20</option>
+          </select>
+          <br/>
+          <br/>
+          <br/>
+          {Object.keys(props.albumList).map(function(albumId) {
+            let album = props.albumList[albumId];
+            return <Album title={album.title}
+              artist={album.artist}
+              description={album.description}
+              price={album.price}
+              imageUrl={album.imageUrl}
+              key={albumId}
+              albumId={albumId}
+              currentRouterPath={props.currentRouterPath}
+              onAlbumSelection={props.onAlbumSelection}
+              onEditSelection={props.onEditSelection}
+              albumIdToEdit={props.albumIdToEdit}
+              onUpdateSelectedAlbum={props.onUpdateSelectedAlbum}/>;
+          })}
+        </div>;
     }
   }
 
@@ -108,7 +107,8 @@ Marketplace.propTypes = {
   currentRouterPath:PropTypes.string,
   onEditSelection:PropTypes.func,
   albumIdToEdit:PropTypes.string,
-  onUpdateSelectedAlbum:PropTypes.func
+  onUpdateSelectedAlbum:PropTypes.func,
+  onFilterChange:PropTypes.func
 };
 
 export default Marketplace;
