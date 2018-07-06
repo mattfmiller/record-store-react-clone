@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 function Admin(props) {
   return(
     <div>
-      <NewAlbumForm onNewAlbumCreation={props.onNewAlbumCreation} />
+      <NewAlbumForm onNewAlbumCreation={props.onNewAlbumCreation} onFilterChange={props.onFilterChange}/>
       <Marketplace albumList={props.albumList} selectedAlbum={props.selectedAlbum} onAlbumSelection={props.onAlbumSelection} currentRouterPath={props.currentRouterPath} onEditSelection={props.onEditSelection} albumIdToEdit={props.albumIdToEdit} onUpdateSelectedAlbum={props.onUpdateSelectedAlbum}/>
     </div>
   );

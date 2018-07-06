@@ -29,6 +29,7 @@ class App extends React.Component{
     let newAlbumId = v4();
     let newMasterAlbumList = Object.assign({}, this.state.masterAlbumList, {[newAlbumId]: newAlbum});
     this.setState({masterAlbumList: newMasterAlbumList});
+    this.setState({filteredAlbumList: newMasterAlbumList});
   }
 
   handleAlbumSelection(albumId) {
@@ -67,7 +68,7 @@ class App extends React.Component{
           <Route exact path='/' component={Welcome}/>
           <Route path='/about' component={About}/>
           <Route path='/marketplace' render={()=><Marketplace albumList={this.state.filteredAlbumList} selectedAlbum={this.state.selectedAlbum} onAlbumSelection={this.handleAlbumSelection} onFilterChange={this.handleFilterChange}/>} />
-          <Route path='/admin' render={(props)=><Admin onNewAlbumCreation={this.handleNewAlbumCreation} albumList={this.state.filteredAlbumList} onAlbumSelection={this.handleAlbumSelection} selectedAlbum={this.state.selectedAlbum} currentRouterPath={props.location.pathname} onEditSelection={this.handleEditSelection} albumIdToEdit={this.state.albumToEdit} onUpdateSelectedAlbum={this.handleUpdateSelectedAlbum}/>} />
+          <Route path='/admin' render={(props)=><Admin onNewAlbumCreation={this.handleNewAlbumCreation} albumList={this.state.filteredAlbumList} onAlbumSelection={this.handleAlbumSelection} selectedAlbum={this.state.selectedAlbum} currentRouterPath={props.location.pathname} onEditSelection={this.handleEditSelection} albumIdToEdit={this.state.albumToEdit} onUpdateSelectedAlbum={this.handleUpdateSelectedAlbum} onFilterChange={this.handleFilterChange}/>} />
           <Route component={Error404}/>
         </Switch>
         <Footer/>
