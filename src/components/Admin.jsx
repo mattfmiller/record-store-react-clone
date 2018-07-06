@@ -19,7 +19,8 @@ Admin.propTypes = {
   selectedAlbum:PropTypes.string,
   currentRouterPath:PropTypes.string,
   onEditSelection:PropTypes.func,
-  albumIdToEdit:PropTypes.string
+  albumIdToEdit:PropTypes.string,
+  onUpdateSelectedAlbum:PropTypes.func
 };
 
 export default Admin;

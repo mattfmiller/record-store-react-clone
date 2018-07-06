@@ -78,7 +78,8 @@ Marketplace.propTypes = {
   selectedAlbum:PropTypes.string,
   currentRouterPath:PropTypes.string,
   onEditSelection:PropTypes.func,
-  albumToEdit:PropTypes.string
+  albumIdToEdit:PropTypes.string,
+  onUpdateSelectedAlbum:PropTypes.func
 };
 
 export default Marketplace;

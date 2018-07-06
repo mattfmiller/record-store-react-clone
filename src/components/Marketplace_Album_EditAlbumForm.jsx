@@ -75,7 +75,13 @@ function EditAlbumForm(props) {
 EditAlbumForm.propTypes = {
   albumId:PropTypes.string,
   onEditSelection:PropTypes.func,
-  albumToEdit:PropTypes.string
+  albumIdToEdit:PropTypes.string,
+  title:PropTypes.string,
+  artist:PropTypes.string,
+  description:PropTypes.string,
+  price:PropTypes.number,
+  imageUrl:PropTypes.string,
+  onUpdateSelectedAlbum:PropTypes.func
 };
 
 export default EditAlbumForm;
