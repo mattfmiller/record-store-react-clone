@@ -91,7 +91,7 @@ function NewAlbumForm(props) {
   );
 }
 
-.propTypes = {
+NewAlbumForm.propTypes = {
   onNewAlbumCreation: PropTypes.func
 };
 

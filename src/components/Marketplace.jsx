@@ -39,14 +39,15 @@ function Marketplace(props) {
         <br/>
         <br/>
         <br/>
-        {props.albumList.map((album, index) =>
-          <Album title={album.title}
+        {Object.keys(props.albumList).map(function(albumId) {
+          let album = props.albumList[albumId];
+          return <Album title={album.title}
             artist={album.artist}
             description={album.description}
             price={album.price}
             imageUrl={album.imageUrl}
-            key={index}/>
-        )}
+            key={albumId}/>
+        })}
       </div>
     </div>
   );
