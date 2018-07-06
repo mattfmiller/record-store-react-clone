@@ -2,6 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Album(props) {
+  let contentToDisplayBasedOnPath = null;
+  if (props.currentRouterPath === '/admin') {
+    contentToDisplayBasedOnPath =
+      <div>
+        <p>{props.description}</p>
+        <button>Edit</button>
+      </div>;
+  }
+
   return(
     <div className='album' onClick={() => {props.onAlbumSelection(props.albumId);}}>
       <style jsx>{`
@@ -20,11 +29,15 @@ function Album(props) {
             font-size: 28px;
             font-weight: 400;
           }
+          .album button {
+            
+          }
         `}
       </style>
       <img src={props.imageUrl}/>
       <h3><em>{props.title}</em> by {props.artist}</h3>
       <h3>${props.price}</h3>
+      {contentToDisplayBasedOnPath}
     </div>
   );
 }
@@ -36,7 +49,8 @@ Album.propTypes = {
   price:PropTypes.number,
   imageUrl:PropTypes.string,
   albumId:PropTypes.string,
-  onAlbumSelection:PropTypes.func
+  onAlbumSelection:PropTypes.func,
+  currentRouterPath:PropTypes.string
 };
 
 export default Album;
