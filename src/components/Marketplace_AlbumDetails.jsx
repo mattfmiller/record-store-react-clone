@@ -6,8 +6,6 @@ function AlbumDetails(props) {
       <style jsx>{`
           .album-details {
             align-items: center;
-            border: 1px solid lightgrey;
-            border-radius: 5px;
             padding: 0 20px;
           }
           .album img {
@@ -17,6 +15,12 @@ function AlbumDetails(props) {
             font-size: 28px;
             font-weight: 400;
           }
+          .back {
+            color: blue
+          }
+          .back:hover {
+            text-decoration: underline;
+          }
         `}
       </style>
       <img src={props.selectedAlbum.imageUrl}/>
@@ -24,6 +28,7 @@ function AlbumDetails(props) {
       <h4>{props.selectedAlbum.artist}</h4>
       <p>{props.selectedAlbum.description}</p>
       <p>${props.selectedAlbum.price}</p>
+      <p className='back' onClick={() => {props.onAlbumSelection(null);}}>return to marketplace</p>
     </div>
   );
 }

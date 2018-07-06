@@ -6,36 +6,10 @@ import PropTypes from 'prop-types';
 function Marketplace(props) {
   let optionalSelectedAlbumContent = null;
   if (props.selectedAlbum != null) {
-    optionalSelectedAlbumContent = <AlbumDetails selectedAlbum = {props.albumList[props.selectedAlbum]} />;
-  }
-
-  return(
-    <div className='container'>
-      <style jsx>{`
-        .container {
-          padding: 0 8vw;
-          margin-top: 20px;
-        }
-        .content {
-          margin-left: auto;
-          margin-right: auto;
-          align-items: center;
-          max-width: 1110px;
-        }
-        .content select {
-          float: right;
-          width: 300px;
-          height: 40px;
-          border-radius:5px;
-        }
-        .content h2 {
-          font-size: 32px;
-          font-weight: 400;
-        }
-        `}
-      </style>
-      <div className='content'>
-        {optionalSelectedAlbumContent}
+    optionalSelectedAlbumContent = <AlbumDetails selectedAlbum={props.albumList[props.selectedAlbum]} onAlbumSelection={props.onAlbumSelection} />;
+  } else {
+    optionalSelectedAlbumContent =
+      <div>
         <h2>In Stock</h2>
         <select>
           <option disabled hidden>Filter by Price</option>
@@ -58,6 +32,37 @@ function Marketplace(props) {
             albumId={albumId}
             onAlbumSelection={props.onAlbumSelection}/>;
         })}
+      </div>
+  }
+
+  return(
+    <div className='container'>
+      <style jsx>{`
+        .container {
+          padding: 0 8vw;
+          margin-top: 20px;
+          margin-bottom: 80px;
+        }
+        .content {
+          margin-left: auto;
+          margin-right: auto;
+          align-items: center;
+          max-width: 1110px;
+        }
+        .content select {
+          float: right;
+          width: 300px;
+          height: 40px;
+          border-radius:5px;
+        }
+        .content h2 {
+          font-size: 32px;
+          font-weight: 400;
+        }
+        `}
+      </style>
+      <div className='content'>
+        {optionalSelectedAlbumContent}
       </div>
     </div>
   );
