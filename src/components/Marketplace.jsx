@@ -1,13 +1,20 @@
 import React from 'react';
 import Album from './Marketplace_Album';
+import AlbumDetails from './Marketplace_AlbumDetails';
 import PropTypes from 'prop-types';
 
 function Marketplace(props) {
+  let optionalSelectedAlbumContent = null;
+  if (props.selectedAlbum != null) {
+    optionalSelectedAlbumContent = <AlbumDetails selectedAlbum = {props.albumList[props.selectedAlbum]} />;
+  }
+
   return(
     <div className='container'>
       <style jsx>{`
         .container {
           padding: 0 8vw;
+          margin-top: 20px;
         }
         .content {
           margin-left: auto;
@@ -28,6 +35,7 @@ function Marketplace(props) {
         `}
       </style>
       <div className='content'>
+        {optionalSelectedAlbumContent}
         <h2>In Stock</h2>
         <select>
           <option disabled hidden>Filter by Price</option>
@@ -47,7 +55,8 @@ function Marketplace(props) {
             price={album.price}
             imageUrl={album.imageUrl}
             key={albumId}
-            albumId={albumId} />;
+            albumId={albumId}
+            onAlbumSelection={props.onAlbumSelection}/>;
         })}
       </div>
     </div>
@@ -55,7 +64,8 @@ function Marketplace(props) {
 }
 
 Marketplace.propTypes = {
-  albumList: PropTypes.object
+  albumList:PropTypes.object,
+  onAlbumSelection:PropTypes.func
 };
 
 export default Marketplace;

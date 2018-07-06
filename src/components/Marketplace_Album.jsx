@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Album(props) {
   return(
-    <div className='album'>
+    <div className='album' onClick={() => {props.onAlbumSelection(props.albumId);}}>
       <style jsx>{`
           .album {
             align-items: center;
@@ -34,7 +34,9 @@ Album.propTypes = {
   artist:PropTypes.string,
   description:PropTypes.string,
   price:PropTypes.number,
-  imageUrl:PropTypes.string
+  imageUrl:PropTypes.string,
+  albumId:PropTypes.string,
+  onAlbumSelection:PropTypes.func
 };
 
 export default Album;

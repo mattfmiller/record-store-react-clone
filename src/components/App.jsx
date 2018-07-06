@@ -17,15 +17,18 @@ class App extends React.Component{
       selectedAlbum: null
     };
     this.handleNewAlbumCreation = this.handleNewAlbumCreation.bind(this);
+    this.handleAlbumSelection = this.handleAlbumSelection.bind(this);
   }
 
   handleNewAlbumCreation(newAlbum) {
     let newAlbumId = v4();
     let newMasterAlbumList = Object.assign({}, this.state.masterAlbumList, {[newAlbumId]: newAlbum});
     this.setState({masterAlbumList: newMasterAlbumList});
-    console.log(this.state);
   }
 
+  handleAlbumSelection(albumId) {
+    this.setState({selectedAlbum: albumId});
+  }
 
   render() {
     return (
@@ -40,8 +43,8 @@ class App extends React.Component{
         <Switch>
           <Route exact path='/' component={Welcome}/>
           <Route path='/about' component={About}/>
-          <Route path='/marketplace' render={()=><Marketplace albumList={this.state.masterAlbumList}/>} />
-          <Route path='/admin' render={()=><Admin onNewAlbumCreation={this.handleNewAlbumCreation} albumList={this.state.masterAlbumList}/>} />
+          <Route path='/marketplace' render={()=><Marketplace albumList={this.state.masterAlbumList} selectedAlbum={this.state.selectedAlbum} onAlbumSelection={this.handleAlbumSelection}/>} />
+          <Route path='/admin' render={()=><Admin onNewAlbumCreation={this.handleNewAlbumCreation} albumList={this.state.masterAlbumList} onAlbumSelection={this.handleAlbumSelection} selectedAlbum={this.state.selectedAlbum}/>} />
           <Route component={Error404}/>
         </Switch>
         <Footer/>
