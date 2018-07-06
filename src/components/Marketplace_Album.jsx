@@ -8,7 +8,11 @@ function Album(props) {
     contentToDisplayBasedOnPath =
       <div>
         <p>{props.description}</p>
-        <EditAlbumForm albumId={props.albumId} onEditSelection={props.onEditSelection} albumToEdit={props.albumToEdit}/>
+        <EditAlbumForm albumId={props.albumId} onEditSelection={props.onEditSelection} albumIdToEdit={props.albumIdToEdit} onUpdateSelectedAlbum={props.onUpdateSelectedAlbum} title={props.title}
+          artist={props.artist}
+          description={props.description}
+          price={props.price}
+          imageUrl={props.imageUrl}/>
       </div>;
   }
 
@@ -53,7 +57,8 @@ Album.propTypes = {
   albumId:PropTypes.string,
   onAlbumSelection:PropTypes.func,
   currentRouterPath:PropTypes.string,
-  onEditSelection:PropTypes.func
+  onEditSelection:PropTypes.func,
+  albumToEdit:PropTypes.string
 };
 
 export default Album;

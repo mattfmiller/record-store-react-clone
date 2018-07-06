@@ -33,7 +33,8 @@ function Marketplace(props) {
             currentRouterPath={props.currentRouterPath}
             onAlbumSelection={props.onAlbumSelection}
             onEditSelection={props.onEditSelection}
-            albumToEdit={props.albumToEdit}/>;
+            albumIdToEdit={props.albumIdToEdit}
+            onUpdateSelectedAlbum={props.onUpdateSelectedAlbum}/>;
         })}
       </div>;
   }
@@ -76,7 +77,8 @@ Marketplace.propTypes = {
   onAlbumSelection:PropTypes.func,
   selectedAlbum:PropTypes.string,
   currentRouterPath:PropTypes.string,
-  onEditSelection:PropTypes.func
+  onEditSelection:PropTypes.func,
+  albumToEdit:PropTypes.string
 };
 
 export default Marketplace;

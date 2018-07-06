@@ -10,6 +10,7 @@ function NewAlbumForm(props) {
 
   function handleNewAlbumFormSubmission(event) {
     event.preventDefault();
+    console.log(_title);
     props.onNewAlbumCreation({title: _title.value, artist: _artist.value, description: _description.value, price: parseInt(_price.value), imageUrl: _imageUrl.value});
     _title.value = '';
     _artist.value = '';
