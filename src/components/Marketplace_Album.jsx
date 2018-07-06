@@ -8,7 +8,7 @@ function Album(props) {
     contentToDisplayBasedOnPath =
       <div>
         <p>{props.description}</p>
-        <EditAlbumForm albumId={props.albumId} onEditSelection={props.onEditSelection} albumEdit={props.albumEdit}/>
+        <EditAlbumForm albumId={props.albumId} onEditSelection={props.onEditSelection} albumToEdit={props.albumToEdit}/>
       </div>;
   }
 

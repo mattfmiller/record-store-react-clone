@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function EditAlbumForm(props) {
   let conditionalContent = <button onClick={() => {props.onEditSelection(props.albumId);}}>Edit</button>;
-  if (props.albumEdit) {
+  if (props.albumToEdit === props.albumId) {
     conditionalContent = <p>Form</p>;
   }
   return(

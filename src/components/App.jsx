@@ -14,7 +14,8 @@ class App extends React.Component{
     super(props);
     this.state = {
       masterAlbumList: {},
-      selectedAlbum: null
+      selectedAlbum: null,
+      albumToEdit: null
     };
     this.handleNewAlbumCreation = this.handleNewAlbumCreation.bind(this);
     this.handleAlbumSelection = this.handleAlbumSelection.bind(this);
@@ -32,10 +33,7 @@ class App extends React.Component{
   }
 
   handleEditSelection(albumId) {
-    let newMasterAlbumList = Object.assign({}, this.state.masterAlbumList);
-    newMasterAlbumList[albumId].edit = true;
-    this.setState({masterAlbumList: newMasterAlbumList});
-    console.log(this.state);
+    this.setState({albumToEdit: albumId});
   }
 
   render() {
@@ -52,7 +50,7 @@ class App extends React.Component{
           <Route exact path='/' component={Welcome}/>
           <Route path='/about' component={About}/>
           <Route path='/marketplace' render={()=><Marketplace albumList={this.state.masterAlbumList} selectedAlbum={this.state.selectedAlbum} onAlbumSelection={this.handleAlbumSelection}/>} />
-          <Route path='/admin' render={(props)=><Admin onNewAlbumCreation={this.handleNewAlbumCreation} albumList={this.state.masterAlbumList} onAlbumSelection={this.handleAlbumSelection} selectedAlbum={this.state.selectedAlbum} currentRouterPath={props.location.pathname} onEditSelection={this.handleEditSelection}/>} />
+          <Route path='/admin' render={(props)=><Admin onNewAlbumCreation={this.handleNewAlbumCreation} albumList={this.state.masterAlbumList} onAlbumSelection={this.handleAlbumSelection} selectedAlbum={this.state.selectedAlbum} currentRouterPath={props.location.pathname} onEditSelection={this.handleEditSelection} albumToEdit={this.state.albumToEdit}/>} />
           <Route component={Error404}/>
         </Switch>
         <Footer/>

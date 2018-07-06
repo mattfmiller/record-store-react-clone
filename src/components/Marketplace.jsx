@@ -33,7 +33,7 @@ function Marketplace(props) {
             currentRouterPath={props.currentRouterPath}
             onAlbumSelection={props.onAlbumSelection}
             onEditSelection={props.onEditSelection}
-            albumEdit={album.edit}/>;
+            albumToEdit={props.albumToEdit}/>;
         })}
       </div>;
   }
