@@ -1,5 +1,6 @@
 import React from 'react';
 import Album from './Marketplace_Album';
+import PropTypes from 'prop-types';
 
 function Marketplace(props) {
   return(
@@ -50,5 +51,9 @@ function Marketplace(props) {
     </div>
   );
 }
+
+Marketplace.propTypes = {
+  albumList: PropTypes.array
+};
 
 export default Marketplace;
