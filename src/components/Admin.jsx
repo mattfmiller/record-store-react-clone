@@ -7,13 +7,14 @@ function Admin(props) {
   return(
     <div>
       <NewAlbumForm onNewAlbumCreation={props.onNewAlbumCreation} />
-      <Marketplace />
+      <Marketplace albumList={props.albumList}/>
     </div>
   );
 }
 
 Admin.propTypes = {
-  onNewAlbumCreation: PropTypes.func
+  onNewAlbumCreation: PropTypes.func,
+  albumList: PropTypes.object
 };
 
 export default Admin;

@@ -16,13 +16,13 @@ class App extends React.Component{
       masterAlbumList: {},
       selectedAlbum: null
     };
+    this.handleNewAlbumCreation = this.handleNewAlbumCreation.bind(this);
   }
 
   handleNewAlbumCreation(newAlbum) {
     let newAlbumId = v4();
     let newMasterAlbumList = Object.assign({}, this.state.masterAlbumList, {[newAlbumId]: newAlbum});
     this.setState({masterAlbumList: newMasterAlbumList});
-    console.log(this.state);
   }
 
   render() {
@@ -39,7 +39,7 @@ class App extends React.Component{
           <Route exact path='/' component={Welcome}/>
           <Route path='/about' component={About}/>
           <Route path='/marketplace' render={()=><Marketplace albumList={this.state.masterAlbumList}/>} />
-          <Route path='/admin' render={()=><Admin onNewAlbumCreation={this.handleNewAlbumCreation}/>} />
+          <Route path='/admin' render={()=><Admin onNewAlbumCreation={this.handleNewAlbumCreation} albumList={this.state.masterAlbumList}/>} />
           <Route component={Error404}/>
         </Switch>
         <Footer/>

@@ -46,7 +46,8 @@ function Marketplace(props) {
             description={album.description}
             price={album.price}
             imageUrl={album.imageUrl}
-            key={albumId}/>
+            key={albumId}
+            albumId={albumId} />
         })}
       </div>
     </div>
@@ -54,7 +55,7 @@ function Marketplace(props) {
 }
 
 Marketplace.propTypes = {
-  albumList: PropTypes.array
+  albumList: PropTypes.object
 };
 
 export default Marketplace;
