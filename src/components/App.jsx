@@ -14,6 +14,7 @@ class App extends React.Component{
     super(props);
     this.state = {
       masterAlbumList: {},
+      filteredAlbumList: {},
       selectedAlbum: null,
       albumToEdit: null
     };
@@ -21,6 +22,7 @@ class App extends React.Component{
     this.handleAlbumSelection = this.handleAlbumSelection.bind(this);
     this.handleEditSelection = this.handleEditSelection.bind(this);
     this.handleUpdateSelectedAlbum = this.handleUpdateSelectedAlbum.bind(this);
+    this.handleFilterChange = this.handleFilterChange.bind(this);
   }
 
   handleNewAlbumCreation(newAlbum) {
@@ -43,6 +45,14 @@ class App extends React.Component{
     this.setState({masterAlbumList: newMasterAlbumList});
   }
 
+  handleFilterChange(filterTerm) {
+    console.log(filterTerm);
+    if (filterTerm === 'all'){
+      this.setState({filteredAlbumList: this.state.masterAlbumList})
+    }
+
+  }
+
   render() {
     return (
       <div className='app'>
@@ -56,8 +66,8 @@ class App extends React.Component{
         <Switch>
           <Route exact path='/' component={Welcome}/>
           <Route path='/about' component={About}/>
-          <Route path='/marketplace' render={()=><Marketplace albumList={this.state.masterAlbumList} selectedAlbum={this.state.selectedAlbum} onAlbumSelection={this.handleAlbumSelection}/>} />
-          <Route path='/admin' render={(props)=><Admin onNewAlbumCreation={this.handleNewAlbumCreation} albumList={this.state.masterAlbumList} onAlbumSelection={this.handleAlbumSelection} selectedAlbum={this.state.selectedAlbum} currentRouterPath={props.location.pathname} onEditSelection={this.handleEditSelection} albumIdToEdit={this.state.albumToEdit} onUpdateSelectedAlbum={this.handleUpdateSelectedAlbum}/>} />
+          <Route path='/marketplace' render={()=><Marketplace albumList={this.state.filteredAlbumList} selectedAlbum={this.state.selectedAlbum} onAlbumSelection={this.handleAlbumSelection} onFilterChange={this.handleFilterChange}/>} />
+          <Route path='/admin' render={(props)=><Admin onNewAlbumCreation={this.handleNewAlbumCreation} albumList={this.state.filteredAlbumList} onAlbumSelection={this.handleAlbumSelection} selectedAlbum={this.state.selectedAlbum} currentRouterPath={props.location.pathname} onEditSelection={this.handleEditSelection} albumIdToEdit={this.state.albumToEdit} onUpdateSelectedAlbum={this.handleUpdateSelectedAlbum}/>} />
           <Route component={Error404}/>
         </Switch>
         <Footer/>

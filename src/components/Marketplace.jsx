@@ -5,18 +5,24 @@ import PropTypes from 'prop-types';
 
 function Marketplace(props) {
   let optionalSelectedAlbumContent = null;
+
+  function handleFilterValue(event) {
+    console.log(event.target.value);
+    // props.onFilterChange(event.target.value);
+  }
+
   if (props.selectedAlbum != null) {
     optionalSelectedAlbumContent = <AlbumDetails selectedAlbum={props.albumList[props.selectedAlbum]} onAlbumSelection={props.onAlbumSelection} />;
   } else {
     optionalSelectedAlbumContent =
       <div>
         <h2>In Stock</h2>
-        <select>
-          <option disabled hidden>Filter by Price</option>
-          <option>All</option>
-          <option>$50+</option>
-          <option>$20-50</option>
-          <option>Under $20</option>
+        <select onChange={handleFilterValue}>
+          <option disabled hidden value='all'>Filter by Price</option>
+          <option value='all'>All</option>
+          <option value='high'>$50+</option>
+          <option value='mid'>$20-50</option>
+          <option vlaue='low'>Under $20</option>
         </select>
         <br/>
         <br/>
