@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import EditAlbumForm from './Marketplace_Album_EditAlbumForm';
 
 function Album(props) {
   let contentToDisplayBasedOnPath = null;
@@ -7,36 +8,37 @@ function Album(props) {
     contentToDisplayBasedOnPath =
       <div>
         <p>{props.description}</p>
-        <button>Edit</button>
+        <EditAlbumForm albumToEdit={props.albumToEdit} albumId={props.albumId} onEditSelection={props.onEditSelection}/>
       </div>;
   }
 
   return(
-    <div className='album' onClick={() => {props.onAlbumSelection(props.albumId);}}>
+    <div className='album'>
       <style jsx>{`
           .album {
-            align-items: center;
             border: 1px solid lightgrey;
             border-radius: 5px;
             padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 9fr 2fr;
           }
-          .album img {
+          .album-link img {
             width: 50px;
           }
           .album h3 {
             font-size: 28px;
             font-weight: 400;
           }
-          .album button {
-            
+          .album-link {
+            align-items: center;
+            display: grid;
+            grid-template-columns: 1fr 9fr 2fr;
           }
         `}
       </style>
-      <img src={props.imageUrl}/>
-      <h3><em>{props.title}</em> by {props.artist}</h3>
-      <h3>${props.price}</h3>
+      <div className='album-link' onClick={() => {props.onAlbumSelection(props.albumId);}}>
+        <img src={props.imageUrl}/>
+        <h3><em>{props.title}</em> by {props.artist}</h3>
+        <h3>${props.price}</h3>
+      </div>
       {contentToDisplayBasedOnPath}
     </div>
   );
@@ -50,7 +52,9 @@ Album.propTypes = {
   imageUrl:PropTypes.string,
   albumId:PropTypes.string,
   onAlbumSelection:PropTypes.func,
-  currentRouterPath:PropTypes.string
+  currentRouterPath:PropTypes.string,
+  onEditSelection:PropTypes.func,
+  albumToEdit:PropTypes.string
 };
 
 export default Album;
