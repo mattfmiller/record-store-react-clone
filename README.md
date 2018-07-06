@@ -43,6 +43,7 @@ For support, contact: matt.f.miller@live.com
 * In developing my component chart, I realized I am not sure exactly how to indicate that I want to reuse a component (my marketplace) from an admin route with additional features available. I also don't know how this would work in React yet since we haven't reused components in multiple routes (I assume this is fine though) or used branching to show and hide elements in a component like we did in Angular.
 * While styling with CSS modules, I am having to employ a lot of redundancy in components that have similar behavior. For example, several of my components have a div with className=container that has a certain rules. These rules are consistent between components, but despite the lesson claiming that rules can be passed from parents to children, when I try to declare this rule at a higher level (in App), it does not seem to be passed down to children components forcing me to rewrite it in each component that needs such a div. Perhaps I am doing something incorrectly, but I haven't been able to figure it out.
 * I am unable to target Link tags in my CSS module meaning that I am unable to remove text decoration with this method of styling since targeting anchor tags does not work (even though the DOM renders Link tags as anchor tags).
+* When accessing a component through multiple routes, important to remember to pass all props and callback functions through both routes to component. Seems a little redundant, but makes sense.
 
 ### License
 
