@@ -28,6 +28,7 @@ It has been a while since we worked in Angular at this point so I'm sure I'd hav
 ## Known Bugs
 
 * Filter is not functional yet. Filter terms are being passes to App component, but conditional is not in place to filter albums.
+* No clear button to cancel an update.
 
 ## Support and contact details
 
